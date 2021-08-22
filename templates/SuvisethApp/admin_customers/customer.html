@@ -1,0 +1,12 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <h1>Customers</h1>
+    {{ customer.user.username }}
+    {{ customer.first_name }}
+    {{ customer.last_name }}
+    {{ customer.mobile_no }}
+    <img src="{{ customer.profile_pic.url }}" alt="">
+</div>
+
+{% endblock %}

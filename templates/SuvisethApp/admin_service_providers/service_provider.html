@@ -1,0 +1,9 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <h1>{{ service_provider.company_name }}</h1>
+   
+   <p><a href="{% url 'SuvisethApp:all_service_providers'%}">back</a></p>
+</div>
+
+{% endblock %}

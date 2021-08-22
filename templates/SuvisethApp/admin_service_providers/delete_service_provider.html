@@ -1,0 +1,14 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <p>Do you want to delete {{ sprovider.company_name }}? </p>
+   <form action="{% url 'SuvisethApp:delete_service_provider' sprovider.id %}" method="POST">
+        {% csrf_token %} 
+      
+       <a href="{% url 'SuvisethApp:all_service_providers' %}">Cancel</a>
+       <input type="submit" value="Confirm">
+   </form>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <p>Do you want to delete {{ category.name }}? </p>
+   <form action="{% url 'SuvisethApp:delete_category' category.id %}" method="POST">
+        {% csrf_token %} 
+      
+       <a href="{% url 'SuvisethApp:categories' %}">Cancel</a>
+       <input type="submit" value="Confirm">
+   </form>
+    
+</div>
+
+{% endblock %}

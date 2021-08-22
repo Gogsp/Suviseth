@@ -1,0 +1,23 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <h1>Welcome to categories page</h1>
+    <a href="{% url 'SuvisethApp:add_category' %}">Add Category</a>
+
+    <h5>Services</h5>
+    <ol>
+        {% for service in services%}
+        <li>{{ service.name }}</li>
+        <p>{{ service.description }}</p>
+        <img style="width: 200px; height:200px" src="media/{{ service.images }}" alt="image">
+        <p>
+            <a class="btn btn-info" href="{% url 'SuvisethApp:category' service.id %}">View</a>
+            <a class="btn btn-primary" href="{% url 'SuvisethApp:edit_category' service.id %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'SuvisethApp:delete_category' service.id %}">Delete</a>
+        </p>    
+        {% endfor %}
+    </ol>
+    
+</div>
+
+{% endblock %}

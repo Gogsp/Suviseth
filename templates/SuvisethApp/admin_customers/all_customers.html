@@ -1,0 +1,19 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <h1>All Customers</h1>
+    <ol>
+    {% for customer in customers %}
+        <li>{{ customer.user.username }}</li>
+        <p>{{ customer.first_name }}</p>
+        <p>{{ customer.last_name }}</p>
+        
+
+        <a class="btn btn-info" href="{% url 'SuvisethApp:customer' customer.id %}">View</a>
+        <a class="btn btn-danger" href="{% url 'SuvisethApp:remove_customer' customer.id %}">Delete</a>
+        
+    {% endfor %}
+    </ol>
+</div>
+
+{% endblock %}

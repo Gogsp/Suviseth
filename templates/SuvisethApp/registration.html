@@ -1,0 +1,10 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div class="jumbotron">
+    <p><a href="{% url 'SuvisethApp:client_signup' %}">Sign up as Client</a></p>
+    <p><a href="{% url 'SuvisethApp:sprovider_signup' %}">Sign up as Service Provider</a></p>
+    <p><a href="{% url 'SuvisethApp:admin_signup' %}">Sign up as Admin</a></p> 
+
+</div>
+
+{% endblock %}

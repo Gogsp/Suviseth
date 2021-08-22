@@ -1,0 +1,12 @@
+{% extends "SuvisethApp/base.html" %}
+{% block body_block %}
+<div>
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p>
+    <img style="width: 200px; height:200px" src="/media/{{ category.images }}" alt="image">
+    
+    <p><a href="{% url 'SuvisethApp:categories' %}">back</a></p>
+    
+</div>
+
+{% endblock %}
